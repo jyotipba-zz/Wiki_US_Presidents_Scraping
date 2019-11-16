@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+    db:
+      image: mysql:latest
+      environment:
+        MYSQL_ROOT_PASSWORD: secret-key
+        MYSQL_USER: test_user
+        MYSQL_PASSWORD:  secret_password
+        MYSQL_DATABASE:  test_db
+      volumes:
+        - ./sql_data:/var/lib/mysql
+      ports:
+        - '3306:3306'
